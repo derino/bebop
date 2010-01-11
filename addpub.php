@@ -35,6 +35,13 @@ if (isset($_POST['submit'])) {
    $output = shell_exec($JAVA_EXECUTABLE.' -DVERBOSE=yes -jar bib2xml/bib2xml.jar -i newpub.bib bibtex.xml');
    $success = true;
 }
+else if (isset($_POST['regenerate'])) 
+{
+  $output = shell_exec('cp bibtex.bib backup/');
+  $output = shell_exec('make clean');
+  $output = shell_exec('make');
+  echo "bibtex.xml is regenerated";
+}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -140,5 +147,15 @@ If the full text document is not on the server, <a href="javascript:openUploadPu
 <input type="submit" name="submit" id="submit" value="Publish" />
 </div>
 </form>
+
+
+<h1>Regenerate bibtex.xml</h1>
+			 <form name="regenerate-form" id="regenerate-form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+			 <div>
+			 <label for="regenerate"></label>
+			 <input type="submit" name="regenerate" id="regenerate" value="Regenerate" />
+			 </div>
+			 </form>
+			 
 </body>
 </html>

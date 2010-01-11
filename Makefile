@@ -13,6 +13,7 @@ setup: bootstrap
 	chmod 777 newpub.bib
 	mkdir -p abstracts
 	chmod 777 -R abstracts/
+	chmod 777 abstracts
 	chmod 777 -R upload/
 
 bootstrap:
@@ -22,4 +23,4 @@ incremental:
 	$(JAVA_HOME)/java -DVERBOSE=yes -jar $(BIB2XML_JAR) -i newpub.bib bibtex.xml
 
 clean:
-	rm -Rf abstracts/ bibtex.xml newpub.bib
+	rm -Rf abstracts/*.xml bibtex.xml newpub.bib
