@@ -38,9 +38,9 @@ if (isset($_POST['submit'])) {
 else if (isset($_POST['regenerate'])) 
 {
   $output = shell_exec('cp bibtex.bib backup/');
-  $output = shell_exec('make clean');
-  $output = shell_exec('make');
-  echo "bibtex.xml is regenerated";
+  $output .= shell_exec('make clean');
+  $output .= shell_exec('make');
+  $success = true;
 }
 ?>
 
@@ -68,6 +68,20 @@ if (isset($_POST['submit']) )
 	echo "<p style='padding: .5em; border: 2px solid red;'>Error: Form not filled properly. Please go back and fill all the fields except the optional fields.</p>";
       }
   }
+
+if (isset($_POST['regenerate']) )
+  {
+    if( $success == TRUE) 
+      {
+	echo "<p style='padding: .5em; border: 2px solid red;'> bibtex.xml is regenerated. <br />" . $output . "</p>";
+}
+    
+    if ( $success == FALSE) 
+      {
+	echo "<p style='padding: .5em; border: 2px solid red;'>Error: There was an error in the regeneration of bibtex.xml. Please report to the bebop administrator.</p>";
+      }
+  }
+
 ?>
 
 <h1>Add a new publication</h1>
