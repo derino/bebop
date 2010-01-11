@@ -1,0 +1,20 @@
+Bebop - BibTeX Publisher
+
+Bebop provides a nice web interface to a list of publications stored in a BibTeX file. 
+
+Features
+    * based on a single BibTeX file as database
+    * listing by year, author, document type, keywords, research area
+    * generation of keyword cloud (see an example)
+    * displaying abstract, BibTeX and links to DOI, full text, slides, poster files
+    * exporting to BibTeX
+    * RSS feed of the publication list
+    * unAPI support, zotero compatibility
+    * adding new publications online (either by BibTeX code or by filling in specific fields)
+    * better user experience with AJAX
+    * permanent links to publications and categories
+
+Homepage
+http://www.alari.ch/people/derino/Software/Bebop/index.php
+
+Onur Derin <derino at alari dot ch>

@@ -1,0 +1,94 @@
+How to write a BibTeX entry for Bebop
+-------------------------------------
+
+Bebop plays well with standard BibTeX. With a standard BibTeX code, Bebop will allow you 
+out-of-the-box to browse your publications by year, by author; to list them chronologically;
+ to export BibTeX codes per publication. However in order to benefit from some additional 
+features, you may also fill in the abstract, researcharea, keywords, filelink, presentation and poster fields for 
+your publications beside the standard BibTeX fields. This will allow better browsability of 
+the publication list such as listing by research area, generation of keyword cloud, displaying
+ the abstract and including a link to the full text, slides and poster of the publication. To guarantee that
+ publications are ordered properly in time, fill in also the month field if it's absent. 
+(In standard BibTeX, month is an optional field.)
+
+
+How to fill in the researcharea
+-------------------------------
+
+Choose one from the list shown under 'by research area' in the main page. This list is specified 
+in the bebop configuration file. Pay attention to match the cases and be consistent throughout the
+BibTeX file. 
+
+e.g. 
+researcharea="System on Chip" (correct) 
+researcharea="System on chip" (incorrect) 
+
+
+How to fill in the keywords
+---------------------------
+
+Put a comma(,) in between the keywords. Just for usability, keep all the letters small 
+except abbreviations.
+
+e.g. 
+keywords="HW/SW co-design, operating systems, high-level synthesis" (correct) 
+keywords="HW/SW co-design, Operating systems, High-level synthesis" (incorrect) 
+
+Try to enter 4-5 keywords for each of your publications. It would be great if you could 
+try to use same form for same keywords. Keywords are a good way to give the overview of 
+the research done. It is possible to see the publications with a specific keyword. 
+This allows linking papers with each other. Moreover a keyword cloud (similar to tag 
+clouds) is created.
+
+e.g. 
+operating systems (correct) 
+operating system (incorrect) 
+unified modelling language (UML) (correct) 
+UML (incorrect) 
+
+How to fill in the filelink, presentation, poster
+---------------------------
+Give the full path to the file from which the full text, slides and the poster of the publication can be downloaded. 
+Beware of copyright issues.
+
+e.g. 
+filelink="http://www.alari.ch/publications/files/ABeCe07.pdf"
+presentation="http://www.alari.ch/publications/files/ABeCe07_slides.pdf"
+poster="http://www.alari.ch/publications/files/ABeCe07_poster.pdf"
+
+
+How to fill in the month
+------------------------
+
+Initial letter of the month is to be written in capital.
+
+e.g. month="March" 
+or 
+month="March 8-12" 
+
+Note that granularity of sorting in the web page is at the month level, i.e. publications
+ are sorted in descending order by their year and month and NOT day. 
+
+
+How to fill in the BibTeX entry ID
+----------------------------------
+
+The BibTeX entry ID has to be unique. Verify this by checking the BibTeX file.
+
+Usual way of choosing an ID is by concatanating first two letters of each author's surname
+ and the year of publication (e.g. BoPaSa2007)
+
+However, there is a special rule for our case. Since BibTeX has no dedicated types to specify
+ MAS project and Patent, we use the entry ID for this purpose. 
+
+For MS thesis:
+    Publication type: mastersthesis
+    entry ID ends with MS suffix (e.g. deri06MS)
+
+For MAS project:
+    Publication type: mastersthesis
+    entry ID ends with MAS suffix (e.g. dani04MAS)
+
+For Patents:
+    Publication type: misc
+    entry ID ends with PATENT suffix (e.g. BeCe04PATENT)
