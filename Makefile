@@ -15,8 +15,11 @@ setup: bootstrap
 	chmod 777 -R abstracts/
 	chmod 777 -R upload/
 
-bootstrap:
+bootstrap: fetchbib
 	$(JAVA_HOME)/java -DVERBOSE=yes -jar $(BIB2XML_JAR) bibtex.bib
+
+fetchbib:
+	cd bib/ && svn update && cp bibtex.bib ../
 
 incremental:
 	$(JAVA_HOME)/java -DVERBOSE=yes -jar $(BIB2XML_JAR) -i newpub.bib bibtex.xml
