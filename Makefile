@@ -1,5 +1,5 @@
 # Set JAVA_HOME to point to the bin folder that contains java executable
-JAVA_HOME=/usr/java/latest/bin
+JAVA_HOME=/usr/bin
 
 # Set BIB2XML_JAR to point to the bib2xml.jar file
 BIB2XML_JAR=bib2xml/bib2xml.jar

@@ -30,7 +30,7 @@ $MENU = array(
 	      );
 
 // full path to the Java executable (needed by addpub.php)
-$JAVA_EXECUTABLE="/usr/java/latest/bin/java";
+$JAVA_EXECUTABLE="/usr/bin/java";
 
 // OPTIONAL: Bebop page can be customized by including a header file of your own. Specify below the path to your header file.
 //$EXTERNAL_HEADER="includes/header.html";
