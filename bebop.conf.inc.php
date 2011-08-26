@@ -36,6 +36,7 @@ $MENU = array(
 // full path to the Java executable (needed by addpub.php)
 $JAVA_EXECUTABLE="/usr/bin/java";
 
+// You can embed Bebop into your existing website by including bebop.php at any location in your web page.
 // OPTIONAL: Bebop page can be customized by including a header file of your own. Specify below the path to your header file.
 //$EXTERNAL_HEADER="includes/header.html";
 
