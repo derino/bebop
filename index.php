@@ -31,7 +31,7 @@ if(isset($EXTERNAL_CSS))
 </head>
   <body>
 
-<div class="main">
+<div class="bebop">
 <?php 
   if(isset($EXTERNAL_HEADER))
     include $EXTERNAL_HEADER 
@@ -39,11 +39,13 @@ if(isset($EXTERNAL_CSS))
 
 <!-- header -->
 <div class="whitebox">
+
+<!--
 <div class="header">
 
    <a href="rss.php" class="logout"><span>RSS</span></a>
    <a href="." class="logo"><span>Publications</span></a> 
-</div> <!-- /header -->
+</div>--> <!-- /header -->
 
 <div class="content">
 <div class="entry1">
