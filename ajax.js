@@ -4,6 +4,11 @@ var toggleEntryDetail = {};
 var toggleKeywordsCloud = 'h';
 var loadingMessage = "<div class=\"loading\">Loading...</div>";
 
+var jspathel = document.getElementById('bebopjs');
+var jspath = jspathel.getAttribute('src');
+var bebop_home_dir = jspath.substring(0, jspath.lastIndexOf('/')+1); 
+// e.g. http://www.aaa.com/bebop/
+
 function showCategory(strBy, str)
 { 
 toggleBib = {};
@@ -29,7 +34,7 @@ else
 // h for hide
   toggleKeywordsCloud = 'h';
   document.getElementById("keywordsCloud").innerHTML="";
-  var url="ajax.php"
+  var url=bebop_home_dir+"ajax.php"
   url=url+"?action=showcategory&by="+strBy+"&pub="+str
   url=url+"&sid="+Math.random()
   xmlHttp.onreadystatechange=stateChanged 
@@ -63,7 +68,7 @@ if(toggleBib[pub]!='s')
 	 return
 	 } 
 	// alert ("getBib called")
-	var url="ajax.php"
+	var url=bebop_home_dir+"ajax.php"
 	url=url+"?action=showbib&pub="+pub
 	url=url+"&sid="+Math.random()
 	xmlHttp.onreadystatechange=function () { 
@@ -95,6 +100,7 @@ function openBib(pub, xmlHttp)
 
 function getEntryDetail(pub)
 { 
+    
 if(toggleEntryDetail[pub]!='s')
 {
 	toggleEntryDetail[pub]='s';
@@ -105,7 +111,7 @@ if(toggleEntryDetail[pub]!='s')
 	 return
 	 } 
 	// alert ("getEntryDetail called")
-	var url="ajax.php"
+	var url=bebop_home_dir+"ajax.php"
 	url=url+"?action=showentrydetail&pub="+pub
 	url=url+"&sid="+Math.random()
 	xmlHttp.onreadystatechange=function () { 
@@ -177,7 +183,7 @@ if (xmlHttp==null)
 
 //alert ("showKeywordsCloud called");
 
-var url="ajax.php"
+var url=bebop_home_dir+"ajax.php"
 url=url+"?action=showkeywordscloud"
 url=url+"&sid="+Math.random()
 xmlHttp.onreadystatechange=stateChangedKeywords

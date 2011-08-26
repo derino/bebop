@@ -58,7 +58,7 @@ body {
 	margin-bottom: 11px;
 	padding-bottom: 7px;
 }
-.bebop .entry, .entry0, .entry1, .entry2 {
+.bebop .entry, .entry1 {
 	position: relative;
 	width: 770px;
 	min-height: 38px;
@@ -74,9 +74,6 @@ body {
 }
 .bebop .entry1 {
 	background-image:url(img/b_oncelikli2.gif);
-}
-.bebop .entry2 {
-	background-image:url(img/b_onemli.gif);
 }
 
 .bebop .entry1 span {
@@ -154,9 +151,10 @@ body {
 	visibility: visible; /*hidden;*/
 }
 
-.bebop .entrybody td {
-	vertical-align: top;
-}
+.bebop .entrybody table {                                                                          
+        border: none;                                                                              
+}                                                                                                  
+.bebop .entrybody td {                                                                                    vertical-align: top;                                                                              border: none;                                                                                     text-align: justify;                                                                      }
 .bebop .entrybody ul {
 	padding: 0px;
 	margin-left: 15px;
