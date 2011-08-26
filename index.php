@@ -50,7 +50,12 @@ if(isset($EXTERNAL_CSS))
 <div class="content">
 <div class="entry1">
   <div class="entrybody" style="visibility:visible;">
-<table width="100%">
+<?php
+      if($MENU_STYLE == "HORIZONTAL")
+	print "<table id=\"filters\" width=\"100%\">";
+      else // default: VERTICAL
+	print "<table width=\"100%\">";
+?>
 <tr>
 <td>
 List publications:

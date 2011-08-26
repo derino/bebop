@@ -3,7 +3,7 @@
 include_once("functions.inc.php");
 
 // URL address of the bebop installation folder on your server.
-$BEBOP_HOME="http://www.alari.ch/people/derino/apps/devel/bebop";
+$BEBOP_HOME="http://www.alari.ch/people/derino/apps/bebop";
 
 // OPTIONAL: page title
 $PAGE_TITLE="Publications";
@@ -19,6 +19,10 @@ $FAVICON="http://www.alari.ch/favicon.ico";
 
 // The year of the earliest publication
 $START_YEAR = 2001;
+
+// Style of the publication filtering menu. Possible values: "HORIZONTAL", "VERTICAL"
+// Prefer horizontal if the year list is too long. The default value is vertical.
+// $MENU_STYLE = "HORIZONTAL";
 
 // Menu matrix - comment out the rows to exclude.
 $MENU = array(

@@ -342,3 +342,21 @@ font-size:38px;
 font-weight:900;
 }
 /* End Tag Cloud CSS */
+
+/* horizontal menu matrix */
+.bebop #filters {
+    border: none;
+    margin: 0;
+}
+
+.bebop #filters tr td {
+    display: block;
+    float: left;
+//    clear: left;
+}
+.bebop #filters ul li {
+    float: left;
+    margin: 0px 10px 10px 10px;
+    list-style-position:outside;
+    list-style-type: disc;
+}
