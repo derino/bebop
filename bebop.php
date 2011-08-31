@@ -1,6 +1,8 @@
 <?php 
 include_once("functions.inc.php");
 include_once("bebop.conf.inc.php");
+
+$action=$_GET["action"];
 ?>
 
 <div class="bebop">

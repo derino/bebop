@@ -154,7 +154,11 @@ body {
 .bebop .entrybody table {                                                                          
         border: none;                                                                              
 }                                                                                                  
-.bebop .entrybody td {                                                                                    vertical-align: top;                                                                              border: none;                                                                                     text-align: justify;                                                                      }
+.bebop .entrybody td {
+    vertical-align: top;
+    border: none;
+    text-align: justify;
+}
 .bebop .entrybody ul {
 	padding: 0px;
 	margin-left: 15px;
