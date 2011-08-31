@@ -50,7 +50,7 @@
 
 				<tr><td><b>Document</b></td>
 				    <td>
-				      <img align="absmiddle" src="{$bebophome}/img/spacer.gif" class="sprites permalinkSprite" title="permalink" /><a href="{$bebophome}/index.php?action=showcategory&amp;by=ID&amp;pub={@name}">permanent link</a>
+				      <img align="absmiddle" src="{$bebophome}/img/spacer.gif" class="sprites permalinkSprite" title="permalink" /><a href="index.php?action=showcategory&amp;by=ID&amp;pub={@name}">permanent link</a>
 				      <!-- <xsl:value-of select="$bebophome" />/index.php?action=showcategory&amp;by=ID&amp;pub=<xsl:value-of select="@name" /> -->
 
 				      &#160;<img align="absmiddle" src="{$bebophome}/img/spacer.gif" class="sprites bibtexSprite" title="cite" /><a href="javascript:void(0)" onclick="getBib('{@name}')">BibTeX</a>
