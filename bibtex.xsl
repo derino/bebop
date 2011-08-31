@@ -43,18 +43,21 @@
 		<xsl:call-template name="listPubs">
 			<xsl:with-param name="sortype" select="$sorttype" />
 			<xsl:with-param name="query" select="entries/entry" />
+			<xsl:with-param name="bebophome" select="$bebophome" />
 		</xsl:call-template>
 	</xsl:when>
 	<xsl:when test="$categoryby='year'">
 		<xsl:call-template name="listPubs">
 			<xsl:with-param name="sortype" select="$sorttype" />
 			<xsl:with-param name="query" select="entries/entry[year=$categorytype]" />
+			<xsl:with-param name="bebophome" select="$bebophome" />
 		</xsl:call-template>
 	</xsl:when>
 	<xsl:when test="$categoryby='researcharea'">
 		<xsl:call-template name="listPubs">
 			<xsl:with-param name="sortype" select="$sorttype" />
 			<xsl:with-param name="query" select="entries/entry[researcharea=$categorytype]" />
+			<xsl:with-param name="bebophome" select="$bebophome" />
 		</xsl:call-template>
 	</xsl:when>
 	<xsl:when test="$categoryby='entrytype'">
@@ -63,12 +66,14 @@
 				<xsl:call-template name="listPubs">
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<xsl:with-param name="query" select="entries/entry[entrytype='article']" />
+					<xsl:with-param name="bebophome" select="$bebophome" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:when test="$categorytype='inproceedings'">
 				<xsl:call-template name="listPubs">
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<xsl:with-param name="query" select="entries/entry[entrytype='inproceedings' or entrytype='conference']" />
+					<xsl:with-param name="bebophome" select="$bebophome" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:when test="$categorytype='book'">
@@ -142,6 +147,7 @@
 		<xsl:call-template name="listPubs">
 			<xsl:with-param name="sortype" select="$sorttype" />
 			<xsl:with-param name="query" select="entries/entry" />
+			<xsl:with-param name="bebophome" select="$bebophome" />
 		</xsl:call-template>
 	</xsl:otherwise>
 </xsl:choose>
@@ -240,7 +246,7 @@
 <!-- /bottomleft -->
 
 <div class="bottomright">
-<a href="javascript:void(0)" onclick="getEntryDetail('{@name}')"><img src="img/more.jpg" class="moreButton" alt="toggle details" title="toggle details" /></a>
+<a href="javascript:void(0)" onclick="getEntryDetail('{@name}')"><img src="{$bebophome}/img/more.jpg" class="moreButton" alt="toggle details" title="toggle details" /></a>
 </div>
 
 <!-- IDEA: show details by default when it's a paper being shown by its ID (permalink to a paper) 

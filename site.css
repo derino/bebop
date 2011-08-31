@@ -97,10 +97,12 @@ body {
 }
 
 /* entry layout */
+/* I inlined this one to enhance embeddability of Bebop. 
 .bebop .sprites {
 	 background-image:url("img/sprites.gif");
 	 margin:2px 0 0 0;
 }
+*/
 .bebop .bibtexSprite {
 	   width:20px;
 	   height:20px;
