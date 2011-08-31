@@ -83,7 +83,7 @@ if($action != null && $action != "showentrydetail" && $action != "showbib" && $a
     echo "<div class=\"entrybody\" style=\"visibility:visible;\">";
     echo "Use this URL to link to this page: <br/>";
 
-    $permalink=$BEBOP_HOME."/index.php?action=".$action;
+    $permalink="index.php?action=".$action;
     if($by != null)
       $permalink = $permalink."&amp;by=".$by;
     if($pub != null)
