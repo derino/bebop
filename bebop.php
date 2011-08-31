@@ -128,11 +128,16 @@ echo "</div>";
 <div class="bottomleft">
   <span>
 <a href="index.php?action=copyright">Copyright notice</a> &#149;
-<a href="addpub.php">Add a publication</a> &#149;
-<a href="rss.php">RSS</a> &#149;
+<?php
+  echo "<a href=\"".$BEBOP_HOME."/addpub.php\">Add a publication</a> &#149;";
+  echo "<a href=\"".$BEBOP_HOME."/rss.php\">RSS</a> &#149;";
+?>
 <a href="http://validator.w3.org/check/referer">valid xhtml</a> &#149;
 <a href="http://jigsaw.w3.org/css-validator/check/referer">valid css</a> &#149;
-Powered by <a href="http://www.alari.ch/people/derino/Software/Bebop/index.php">bebop</a> and <a href="bibtex.bib">BibTeX</a>.
+Powered by <a href="http://www.alari.ch/people/derino/Software/Bebop/index.php">bebop</a> and 
+<?php
+  echo "<a href=\"".$BEBOP_HOME."/bibtex.bib\">BibTeX</a>."
+?>
 </span><br/><br/><br/>&nbsp;
 </div> 
 
