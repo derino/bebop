@@ -83,7 +83,9 @@ if($action != null && $action != "showentrydetail" && $action != "showbib" && $a
     echo "<div class=\"entrybody\" style=\"visibility:visible;\">";
     echo "Use this URL to link to this page: <br/>";
 
-    $permalink="index.php?action=".$action;
+    //$http_part = (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"]=="on") ? "https://" : "http://";
+    //$permalink=$http_part . $_SERVER["SERVER_NAME"] . $_SERVER['REQUEST_URI'];
+    $permalink=$BEBOP_HOME . "/index.php?action=" . $action;
     if($by != null)
       $permalink = $permalink."&amp;by=".$by;
     if($pub != null)

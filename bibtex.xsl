@@ -80,18 +80,21 @@
 				<xsl:call-template name="listPubs">
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<xsl:with-param name="query" select="entries/entry[entrytype='book']" />
+					<xsl:with-param name="bebophome" select="$bebophome" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:when test="$categorytype='inbookincollection'">
 				<xsl:call-template name="listPubs">
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<xsl:with-param name="query" select="entries/entry[entrytype='incollection' or entrytype='inbook']" />
+					<xsl:with-param name="bebophome" select="$bebophome" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:when test="$categorytype='mastersthesis'">
 				<xsl:call-template name="listPubs">
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<xsl:with-param name="query" select="entries/entry[entrytype='mastersthesis' and substring-after(@name, substring-before(@name,'MS'))='MS']" />
+					<xsl:with-param name="bebophome" select="$bebophome" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:when test="$categorytype='mastersproject'">
@@ -99,6 +102,7 @@
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<!-- following is equal to ends-with(@name, 'MAS'), but ends-with not available -->
 					<xsl:with-param name="query" select="entries/entry[entrytype='mastersthesis' and substring-after(@name, substring-before(@name,'MAS'))='MAS']" />
+					<xsl:with-param name="bebophome" select="$bebophome" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:when test="$categorytype='patent'">
@@ -106,6 +110,7 @@
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<!-- following is equal to ends-with(@name, 'PATENT'), but ends-with not available -->
 					<xsl:with-param name="query" select="entries/entry[entrytype='misc' and substring-after(@name, substring-before(@name,'PATENT'))='PATENT']" />
+					<xsl:with-param name="bebophome" select="$bebophome" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:when test="$categorytype='misc'">
@@ -113,12 +118,14 @@
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<!-- following is equal to ends-with(@name, 'MISC'), but ends-with not available -->
 					<xsl:with-param name="query" select="entries/entry[entrytype='misc' and substring-after(@name, substring-before(@name,'MISC'))='MISC']" />
+					<xsl:with-param name="bebophome" select="$bebophome" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:call-template name="listPubs">
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<xsl:with-param name="query" select="entries/entry[entrytype=$categorytype]" />
+					<xsl:with-param name="bebophome" select="$bebophome" />
 				</xsl:call-template>
 			</xsl:otherwise>
 		</xsl:choose>
@@ -127,12 +134,14 @@
 		<xsl:call-template name="listPubs">
 			<xsl:with-param name="sortype" select="$sorttype" />
 			<xsl:with-param name="query" select="entries/entry[authors/author=$categorytype]" />
+			<xsl:with-param name="bebophome" select="$bebophome" />
 		</xsl:call-template>
 	</xsl:when>
 	<xsl:when test="$categoryby='keyword'">
 		<xsl:call-template name="listPubs">
 			<xsl:with-param name="sortype" select="$sorttype" />
 			<xsl:with-param name="query" select="entries/entry[keywords/keyword=$categorytype]" />
+			<xsl:with-param name="bebophome" select="$bebophome" />
 		</xsl:call-template>
 	</xsl:when>
 	<xsl:when test="$categoryby='ID'">

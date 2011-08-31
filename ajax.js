@@ -41,8 +41,14 @@ else
 // h for hide
   toggleKeywordsCloud = 'h';
   toggleAuthorList = 'h';
-//  document.getElementById("keywordsCloud").innerHTML="";
-  document.getElementById("keywordsCloud").parentNode.style.display = "none"; // authorlist also has some div id.
+     
+     // this if-else is because div with id keywordsCloud appears alone for some cases and inside div (class entry1) in some other cases.
+     kc=document.getElementById("keywordsCloud");
+     if (kc.parentNode.className == "entry1") //(strBy == "keyword")
+	 document.getElementById("keywordsCloud").parentNode.style.display = "none"; // authorlist also has some div id.
+     else
+	 document.getElementById("keywordsCloud").innerHTML="";
+
   var url=bebop_home_dir+"ajax.php"
   url=url+"?action=showcategory&by="+strBy+"&pub="+str
   url=url+"&sid="+Math.random()
