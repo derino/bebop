@@ -2,6 +2,7 @@ var xmlHttp;
 var toggleBib = {};
 var toggleEntryDetail = {};
 var toggleKeywordsCloud = 'h';
+var toggleAuthorList = 'h';
 var loadingMessage = "<div class=\"loading\">Loading...</div>";
 
 var jspathel = document.getElementById('bebopjs');
@@ -29,12 +30,19 @@ if(str == "showkeywords")
   toggleKeywordsCloud = 's';
   showKeywordsCloud();
  }
+else if(str == "showauthors")
+ {
+// s for show
+  toggleAuthorList = 's';
+  showAuthorList();
+ }
 else
  {
 // h for hide
   toggleKeywordsCloud = 'h';
+  toggleAuthorList = 'h';
 //  document.getElementById("keywordsCloud").innerHTML="";
-  document.getElementById("keywordsCloud").parentNode.style.display = "none";
+  document.getElementById("keywordsCloud").parentNode.style.display = "none"; // authorlist also has some div id.
   var url=bebop_home_dir+"ajax.php"
   url=url+"?action=showcategory&by="+strBy+"&pub="+str
   url=url+"&sid="+Math.random()
@@ -52,7 +60,9 @@ function stateChanged()
  { 
  document.getElementById("CfPTable").innerHTML=xmlHttp.responseText 
  if(toggleKeywordsCloud == 'h')
-   document.getElementById("keywordsCloud").innerHTML="" 
+     document.getElementById("keywordsCloud").innerHTML="";
+ else  if(toggleAuthorList == 'h')
+     document.getElementById("keywordsCloud").innerHTML=""; // they have same div id
 
  } 
 }
@@ -186,6 +196,27 @@ if (xmlHttp==null)
 
 var url=bebop_home_dir+"ajax.php"
 url=url+"?action=showkeywordscloud"
+url=url+"&sid="+Math.random()
+xmlHttp.onreadystatechange=stateChangedKeywords
+xmlHttp.open("GET",url,true)
+xmlHttp.send(null)
+}
+
+function showAuthorList()
+{ 
+toggleAuthorList='s';
+
+xmlHttp=GetXmlHttpObject()
+if (xmlHttp==null)
+ {
+ alert ("Browser does not support HTTP Request")
+ return
+ } 
+
+//alert ("showAuthorList called");
+
+var url=bebop_home_dir+"ajax.php"
+url=url+"?action=showauthorlist"
 url=url+"&sid="+Math.random()
 xmlHttp.onreadystatechange=stateChangedKeywords
 xmlHttp.open("GET",url,true)

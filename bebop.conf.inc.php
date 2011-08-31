@@ -2,8 +2,11 @@
 
 include_once("functions.inc.php");
 
-// URL address of the bebop installation folder on your server.
+// MANDATORY: URL address of the bebop installation folder on your server.
 $BEBOP_HOME="http://www.alari.ch/people/derino/apps/bebop";
+
+// MANDATORY: full path to the Java executable (needed by addpub.php)
+$JAVA_EXECUTABLE="/usr/bin/java";
 
 // OPTIONAL: page title
 $PAGE_TITLE="Publications";
@@ -17,26 +20,28 @@ $PAGE_KEYWORDS="publications";
 // OPTIONAL: favicon - used for the page and the RSS feed
 $FAVICON="http://www.alari.ch/favicon.ico";
 
-// The year of the earliest publication
+
+// MANDATORY: The year of the earliest publication
 $START_YEAR = 2001;
 
 // Style of the publication filtering menu. Possible values: "HORIZONTAL", "VERTICAL"
 // Prefer horizontal if the year list is too long. The default value is vertical.
 // $MENU_STYLE = "HORIZONTAL";
 
-// Menu matrix - comment out the rows to exclude.
+// MANDATORY: Menu matrix - comment out the rows to exclude.
 $MENU = array(
 	      "year" => yearArraySince($START_YEAR), //array('2009', '2008', '2007', '2006', '2005', '2004', '2003', '2002', '2001'),
 	      "researcharea" => array('Your research area', 'Your other research area'),
 	      "keywords" => array(),
 	      "entrytype" => array('paper', 'inproceedings', 'inbookincollection', 'book', 'mastersthesis', 'mastersproject', 'phdthesis', 'techreport', 'patent', 'misc'),
-	      //"author" => array('A. U. Thor')
+	      "author" => array('A. U. Thor')
 	      );
 
-// full path to the Java executable (needed by addpub.php)
-$JAVA_EXECUTABLE="/usr/bin/java";
-
-// You can embed Bebop into your existing website by including bebop.php at any location in your web page.
+// You can embed Bebop into your website by including bebop.php at any location in your web page as explained in
+// http://www.alari.ch/~derino/Software/Bebop/index.php#sec-7 (section "Embedding Bebop to your own website")
+// or
+// alternatively, you can set header and footer html snippets using the options below:
+//
 // OPTIONAL: Bebop page can be customized by including a header file of your own. Specify below the path to your header file.
 //$EXTERNAL_HEADER="includes/header.html";
 

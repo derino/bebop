@@ -29,6 +29,12 @@ if($action != null)
 	$xslfile='showkeywordscloud.xsl';
 	echo transform($xmlfile, $xslfile, $params);
       }
+    else if($action == "showauthorlist")
+      {
+	$xmlfile='bibtex.xml';
+	$xslfile='showauthorlist.xsl';
+	echo transform($xmlfile, $xslfile, $params);
+      }
     else if($action == "showcategory")
       {	
 	$categoryby = $by;
@@ -70,7 +76,7 @@ if($action != null)
 
 
 
-if($action != null && $action != "showentrydetail" && $action != "showbib" && $action != "showkeywordscloud" && $action != "copyright")
+if($action != null && $action != "showentrydetail" && $action != "showbib" && $action != "showkeywordscloud" && $action != "showauthorlist" && $action != "copyright")
   {
     echo "<div class=\"content\">";
     echo "<div class=\"entry1\">";

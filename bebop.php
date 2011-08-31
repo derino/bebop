@@ -38,21 +38,38 @@ List publications:
 
 foreach ($MENU as $_category => $items)
 {
+  print "<td>";
   if($_category == "keywords")
     {
-      print "<td>";
+      //      print "<td>";
       print "<b><a href=\"index.php?action=showkeywordscloud\">by ".$_category."</a></b>&#160;&#160;&#160;<br />";
-      print "<ul>";
-      print "<li><a href=\"index.php?action=showkeywordscloud\">show all</a></li>"; 
-      print "</ul>";
-      print "</td>";
-      continue;
+      //      print "<ul>";
+      //print "<li><a href=\"index.php?action=showkeywordscloud\">show all</a></li>"; 
+      //print "</ul>";
+      //print "</td>";
+      //continue;
     }
-  
-  print "<td>";
-  //  <!--a href="javascript:void(0)" onclick="showCategory('year','all')">by year</a>&#160;&#160;&#160;<br /-->
-  print "<b><a href=\"index.php?action=showcategory&amp;by=".$_category."&amp;pub=all\">by ".$longname[$_category]."</a></b>&#160;&#160;&#160;<br />";
+
+  else if($_category == "author")
+    {
+      print "<b><a href=\"index.php?action=showauthorlist\">by ".$_category."</a></b>&#160;&#160;&#160;<br />";
+    }
+  else
+    {
+      //  <!--a href="javascript:void(0)" onclick="showCategory('year','all')">by year</a>&#160;&#160;&#160;<br /-->
+      print "<b><a href=\"index.php?action=showcategory&amp;by=".$_category."&amp;pub=all\">by ".$longname[$_category]."</a></b>&#160;&#160;&#160;<br />";
+    }
+
   print "<ul>";
+
+  if($_category == "keywords")
+    {
+      print "<li><a href=\"index.php?action=showkeywordscloud\">show all</a></li>"; 
+    }
+  if($_category == "author")
+    {
+      print "<li><a href=\"index.php?action=showauthorlist\">show all</a></li>"; 
+    }
 
   foreach ($items as $_item)
   {
@@ -83,6 +100,17 @@ foreach ($MENU as $_category => $items)
       echo "</div>";
       echo "<script type=\"text/javascript\">toggleKeywordsCloud='s';</script>";
     }
+else if($action == "showauthorlist")
+    {
+      echo "<div class=\"content\">";
+      echo "<div class=\"entry1\">";
+      echo "<div id=\"keywordsCloud\" class=\"authorListLinks\">";
+      include("ajax.php");
+      echo "</div>";
+      echo "</div>";
+      echo "</div>";
+      echo "<script type=\"text/javascript\">toggleAuthorList='s';</script>";
+    }
   else
     {
       echo "<div id=\"keywordsCloud\" class=\"bigLinks\">";
@@ -90,7 +118,7 @@ foreach ($MENU as $_category => $items)
     }
 
 echo "<div id=\"CfPTable\">";
-if($action != "showkeywordscloud")
+if($action != "showkeywordscloud" && $action != "showauthorlist")
     include("ajax.php");  // 'include' is google-friendly, allows index.php?blahblah
 echo "</div>";
 ?>

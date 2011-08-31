@@ -267,12 +267,18 @@ body {
 .bebop a.phdthesis { 
 	background-image:url("img/PhD.png"); 
 }
-
+.bebop a.patent { 
+	background-image:url("img/patent.png"); 
+}
+.bebop a.misc { 
+	background-image:url("img/misc.png"); 
+}
 
 /* Start Tag Cloud CSS */
 .bebop #keywordsCloud {padding:1px; line-height:30px;text-align:justify;}
 .bebop .bigLinks a {text-decoration:none;padding:0px;color:#000000;}
 .bebop .bigLinks a:hover {text-decoration:underline;}
+.bebop .authorListLinks a {text-decoration:none;padding:0px;color:#000000;}
 
 .bebop .total {
 	text-decoration:none;
