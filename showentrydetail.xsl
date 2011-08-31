@@ -23,6 +23,7 @@
       <xsl:for-each select="entries/entry[@name=$pubid]">
 	<xsl:call-template name="printEntryDetails">
 	  <xsl:with-param name="pubid" select="$pubid" />
+	  <xsl:with-param name="bebophome" select="$bebophome" />
 	</xsl:call-template>
 
       </xsl:for-each>
@@ -31,6 +32,7 @@
 
 <xsl:template name="printEntryDetails">
 <xsl:param name="pubid" />
+<xsl:param name="bebophome" />
 
 			<hr />
 			<table>
@@ -48,22 +50,22 @@
 
 				<tr><td><b>Document</b></td>
 				    <td>
-				      <img align="absmiddle" src="img/spacer.gif" class="sprites permalinkSprite" title="permalink" /><a href="index.php?action=showcategory&amp;by=ID&amp;pub={@name}">permanent link</a>
+				      <img align="absmiddle" src="{$bebophome}/img/spacer.gif" class="sprites permalinkSprite" title="permalink" /><a href="{$bebophome}/index.php?action=showcategory&amp;by=ID&amp;pub={@name}">permanent link</a>
 				      <!-- <xsl:value-of select="$bebophome" />/index.php?action=showcategory&amp;by=ID&amp;pub=<xsl:value-of select="@name" /> -->
 
-				      &#160;<img align="absmiddle" src="img/spacer.gif" class="sprites bibtexSprite" title="cite" /><a href="javascript:void(0)" onclick="getBib('{@name}')">BibTeX</a>
+				      &#160;<img align="absmiddle" src="{$bebophome}/img/spacer.gif" class="sprites bibtexSprite" title="cite" /><a href="javascript:void(0)" onclick="getBib('{@name}')">BibTeX</a>
 			<xsl:if test="doi">
-        			&#160;<img align="absmiddle" src="img/spacer.gif" class="sprites htmlSprite" title="DOI" /><a href="{doi}" target="_blank">DOI</a>
+        			&#160;<img align="absmiddle" src="{$bebophome}/img/spacer.gif" class="sprites htmlSprite" title="DOI" /><a href="{doi}" target="_blank">DOI</a>
 			</xsl:if>
 
  			<xsl:if test="filelink">
-        			&#160;<img align="absmiddle" src="img/spacer.gif" class="sprites pdfSprite" title="full text" /><a href="{filelink}">full text</a>
+        			&#160;<img align="absmiddle" src="{$bebophome}/img/spacer.gif" class="sprites pdfSprite" title="full text" /><a href="{filelink}">full text</a>
 			</xsl:if>
  			<xsl:if test="presentation">
-        			&#160;<img align="absmiddle" src="img/spacer.gif" class="sprites slidesSprite" title="presentation" /><a href="{presentation}">slides</a>
+        			&#160;<img align="absmiddle" src="{$bebophome}/img/spacer.gif" class="sprites slidesSprite" title="presentation" /><a href="{presentation}">slides</a>
 			</xsl:if>
  			<xsl:if test="poster">
-        			&#160;<img align="absmiddle" src="img/spacer.gif" class="sprites posterSprite" title="poster" /><a href="{poster}">poster</a>
+        			&#160;<img align="absmiddle" src="{$bebophome}/img/spacer.gif" class="sprites posterSprite" title="poster" /><a href="{poster}">poster</a>
 			</xsl:if>
 				</td></tr>
 			</table>		

@@ -33,7 +33,8 @@ else
  {
 // h for hide
   toggleKeywordsCloud = 'h';
-  document.getElementById("keywordsCloud").innerHTML="";
+//  document.getElementById("keywordsCloud").innerHTML="";
+  document.getElementById("keywordsCloud").parentNode.style.display = "none";
   var url=bebop_home_dir+"ajax.php"
   url=url+"?action=showcategory&by="+strBy+"&pub="+str
   url=url+"&sid="+Math.random()

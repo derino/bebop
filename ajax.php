@@ -47,6 +47,7 @@ if($action != null)
 	$params['sorttype'] = $sorttype;
 	$params['breadcrumb1'] = $breadcrumb1;
 	$params['breadcrumb2'] = $breadcrumb2;
+	$params['bebophome'] = $BEBOP_HOME;
 	echo transform($xmlfile, $xslfile, $params);
       }
     else if($action == 'copyright')
@@ -63,6 +64,7 @@ if($action != null)
      $params['sorttype'] = "year";
      $params['breadcrumb1'] = "by year";
      $params['breadcrumb2'] = "all";
+     $params['bebophome'] = $BEBOP_HOME;
      echo transform($xmlfile, $xslfile, $params);
    }
 

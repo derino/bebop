@@ -25,7 +25,7 @@
 <xsl:param name="sorttype">year</xsl:param>
 <xsl:param name="breadcrumb1">by year</xsl:param>
 <xsl:param name="breadcrumb2">all</xsl:param>
-
+<xsl:param name="bebophome">http</xsl:param>
 
 <xsl:template match="/">
 <br />
@@ -135,6 +135,7 @@
 			<xsl:with-param name="sortype" select="$sorttype" />
 			<xsl:with-param name="query" select="entries/entry[@name=$categorytype]" />
 			<xsl:with-param name="categorybyID" select="'true'" />
+			<xsl:with-param name="bebophome" select="$bebophome" />
 		</xsl:call-template>
 	</xsl:when>
 	<xsl:otherwise> <!-- All -->
@@ -153,6 +154,7 @@
 <xsl:param name="sortype" />
 <xsl:param name="query" />
 <xsl:param name="categorybyID">false</xsl:param> <!-- when this param is true, entry details are printed, otherwise no -->
+<xsl:param name="bebophome" />
 
 <xsl:variable name="vMonthNames" 
     select="'|January|February|March|April|May|June|July|August|September|October|November|December'"/>
@@ -252,6 +254,7 @@
 
       <xsl:call-template name="printEntryDetails">
 	<xsl:with-param name="pubid" select="@name" />
+	<xsl:with-param name="bebophome" select="$bebophome" />
       </xsl:call-template>
     </div>
     <!--hr /-->

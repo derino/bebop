@@ -34,7 +34,7 @@ print "<script id=\"bebopjs\" src=\"".$BEBOP_HOME."/ajax.js\" type=\"text/javasc
   <body>
 
 <?php
-  include "bebop.php";
+include "bebop.php";
 ?>
 
   </body>
