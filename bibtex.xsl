@@ -180,10 +180,10 @@
 		<div class="{entrytype}"><a class="{entrytype}" href="index.php?action=showcategory&amp;by=ID&amp;pub={@name}" title="{entrytype}"></a></div>
 	</xsl:when>
 	<xsl:when test="entrytype='mastersthesis' and substring-after(@name, substring-before(@name,'MAS'))='MAS'">
-		<div class="{entrytype}"><a class="{entrytype}" href="index.php?action=showcategory&amp;by=ID&amp;pub={@name}" title="MAS project"></a></div>
+		<div class="mastersproject"><a class="mastersproject" href="index.php?action=showcategory&amp;by=ID&amp;pub={@name}" title="MAS project"></a></div>
 	</xsl:when>
         <xsl:when test="entrytype='misc' and substring-after(@name, substring-before(@name,'PATENT'))='PATENT'">
-	  <a class="entrycategoryimage" id="patent" href="index.php?action=showcategory&amp;by=ID&amp;pub={@name}" title="Patent"><span>[publication]</span></a>
+	  <div class="patent"><a class="patent" href="index.php?action=showcategory&amp;by=ID&amp;pub={@name}" title="Patent"></a></div>
 </xsl:when>
 	<xsl:otherwise>
 		 <div class="{entrytype}"><a class="{entrytype}" href="index.php?action=showcategory&amp;by=ID&amp;pub={@name}" title="{entrytype}">&nbsp;</a></div>

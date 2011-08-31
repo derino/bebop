@@ -230,7 +230,7 @@ body {
 	padding-bottom: 20px;
 }
 
-.bebop .article, .inproceedings, .inbook, .conference, .book, .incollection, .techreport, .mastersthesis, .phdthesis
+.bebop .article, .inproceedings, .inbook, .conference, .book, .incollection, .techreport, .mastersthesis, .mastersproject, .phdthesis, .patent, .misc
 {
 	position:absolute;
 	height: 36px;
