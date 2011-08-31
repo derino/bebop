@@ -34,6 +34,7 @@ print "<script id=\"bebopjs\" src=\"".$BEBOP_HOME."/ajax.js\" type=\"text/javasc
   <body>
 
 <?php
+$BEBOP_INCLUDING_FILE = $_SERVER['SERVER_NAME'] . $_SERVER['PHP_SELF'];
 include "bebop.php";
 ?>
 
