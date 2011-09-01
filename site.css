@@ -237,6 +237,7 @@ body {
 	position:absolute;
 	height: 36px;
 	width: 36px;
+	background-repeat: no-repeat;
 }
 
 .bebop a.article { 
