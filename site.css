@@ -371,3 +371,42 @@ font-weight:900;
     list-style-position:outside;
     list-style-type: disc;
 }
+
+div.sociable { margin: 0px 0; }
+
+.sociable a {
+    text-decoration: none;
+    border-bottom: 0px !important;
+}
+.sociable ul {
+    display: inline;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.sociable ul li {
+    background: none;
+    display: inline !important;
+    list-style-type: none;
+    margin: 0;
+    padding: 1px;
+}
+.sociable ul li:before { content: ""; }
+.sociable img {
+    float: none;
+    width: 16px;
+    height: 16px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.sociable-hovers {
+    opacity: .4;
+    -moz-opacity: .4;
+    filter: alpha(opacity=40);
+}
+.sociable-hovers:hover {
+    opacity: 1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=100);
+}

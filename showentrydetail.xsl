@@ -68,6 +68,24 @@
         			&#160;<img align="absmiddle" src="{$bebophome}/img/spacer.gif" class="posterSprite" style="background-image:url('{$bebophome}/img/sprites.gif');margin:2px 0 0 0;" title="poster" /><a href="{poster}">poster</a>
 			</xsl:if>
 				</td></tr>
+
+				<tr><td><b>Share</b></td>
+				<td>
+
+<div class="sociable">
+<ul>
+<!--li class="sociablefirst"><a rel="nofollow"  target="_blank" href="mailto:?subject={title}%26body={$bebophome}/index.php?action=showcategory%25%32%36by=ID%25%32%36pub={@name}" title="email"><img src="{$bebophome}/img/services-sprite.gif" title="email" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-325px -1px" class="sociable-hovers" /></a></li-->
+<li><a rel="nofollow"  target="_blank" href="http://twitter.com/home?status={title} - {$bebophome}/index.php?action=showcategory%26by=ID%26pub={@name}" title="Twitter"><img src="{$bebophome}/img/services-sprite.gif" title="Twitter" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-343px -55px" class="sociable-hovers" /></a></li>
+<li><a rel="nofollow"  target="_blank" href="http://www.facebook.com/share.php?u={$bebophome}/index.php?action=showcategory%26by=ID%26pub={@name}&amp;t={title}" title="Facebook"><img src="{$bebophome}/img/services-sprite.gif" title="Facebook" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-343px -1px" class="sociable-hovers" /></a></li>
+</ul>
+
+</div>
+
+
+
+				</td>
+				</tr>
+
 			</table>		
 </xsl:template>
 <!-- /printEntryDetails -->
