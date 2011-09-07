@@ -372,6 +372,13 @@ font-weight:900;
     list-style-type: disc;
 }
 
+.bebop ul li {
+    font-size: 12px;
+    line-height: 18px;
+    list-style-position:outside;
+    list-style-type: disc;
+}
+
 div.sociable { margin: 0px 0; }
 
 .sociable a {

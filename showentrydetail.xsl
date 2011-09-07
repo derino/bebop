@@ -34,11 +34,14 @@
 <xsl:param name="pubid" />
 <xsl:param name="bebophome" />
 
+<xsl:variable name="abstract" 
+    select="document(concat('abstracts/',$pubid,'-abstract.xml'))//abstract"/>
 			<hr />
 			<table>
 				<tr><td><b>Abstract</b></td>
 				    <td>
-					  <xsl:value-of select="document(concat('abstracts/',$pubid,'-abstract.xml'))//abstract" />				      
+				      <xsl:value-of select="$abstract" />
+					  <!--xsl:value-of select="document(concat('abstracts/',$pubid,'-abstract.xml'))//abstract" /-->				      
 				    </td>
 				</tr>
 				
@@ -76,7 +79,11 @@
 <ul>
 <!--li class="sociablefirst"><a rel="nofollow"  target="_blank" href="mailto:?subject={title}%26body={$bebophome}/index.php?action=showcategory%25%32%36by=ID%25%32%36pub={@name}" title="email"><img src="{$bebophome}/img/services-sprite.gif" title="email" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-325px -1px" class="sociable-hovers" /></a></li-->
 <li><a rel="nofollow"  target="_blank" href="http://twitter.com/home?status={title} - {$bebophome}/index.php?action=showcategory%26by=ID%26pub={@name}" title="Twitter"><img src="{$bebophome}/img/services-sprite.gif" title="Twitter" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-343px -55px" class="sociable-hovers" /></a></li>
-<li><a rel="nofollow"  target="_blank" href="http://www.facebook.com/share.php?u={$bebophome}/index.php?action=showcategory%26by=ID%26pub={@name}&amp;t={title}" title="Facebook"><img src="{$bebophome}/img/services-sprite.gif" title="Facebook" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-343px -1px" class="sociable-hovers" /></a></li>
+
+
+
+<li><a rel="nofollow"  target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]={$bebophome}/index.php?action=showcategory%26by=ID%26pub={@name}&amp;p[title]={title}&amp;p[summary]={$abstract}&amp;p[images][0]={$bebophome}/img/C.png&amp;p[images][1]={$bebophome}/img/J.png&amp;p[images][2]={$bebophome}/img/BC.png&amp;p[images][3]={$bebophome}/img/B.png&amp;p[images][4]={$bebophome}/img/MS.png&amp;p[images][5]={$bebophome}/img/MAS.png&amp;p[images][6]={$bebophome}/img/PhD.png&amp;p[images][7]={$bebophome}/img/misc.png&amp;p[images][8]={$bebophome}/img/patent.png" title="Facebook"><img src="{$bebophome}/img/services-sprite.gif" title="Facebook" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-343px -1px" class="sociable-hovers" /></a></li>
+
 </ul>
 
 </div>
