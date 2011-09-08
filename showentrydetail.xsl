@@ -81,8 +81,7 @@
 <li><a rel="nofollow"  target="_blank" href="http://twitter.com/home?status={title} - {$bebophome}/index.php?action=showcategory%26by=ID%26pub={@name}" title="Twitter"><img src="{$bebophome}/img/services-sprite.gif" title="Twitter" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-343px -55px" class="sociable-hovers" /></a></li>
 
 
-
-<li><a rel="nofollow"  target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]={$bebophome}/index.php?action=showcategory%26by=ID%26pub={@name}&amp;p[title]={title}&amp;p[summary]={$abstract}&amp;p[images][0]={$bebophome}/img/C_w100.png&amp;p[images][1]={$bebophome}/img/J_w100.png&amp;p[images][2]={$bebophome}/img/BC_w100.png&amp;p[images][3]={$bebophome}/img/B_w100.png&amp;p[images][4]={$bebophome}/img/MS_w100.png&amp;p[images][5]={$bebophome}/img/MAS_w100.png&amp;p[images][6]={$bebophome}/img/PhD_w100.png&amp;p[images][7]={$bebophome}/img/misc_w100.png&amp;p[images][8]={$bebophome}/img/patent_w100.png" title="Facebook"><img src="{$bebophome}/img/services-sprite.gif" title="Facebook" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-343px -1px" class="sociable-hovers" /></a></li>
+<li><a rel="nofollow"  target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]={$bebophome}/index.php?action=showcategory%26by=ID%26pub={@name}&amp;p[title]={title}&amp;p[summary]={$abstract}&amp;p[images][0]={$bebophome}/img/bebop-logo_w100.png" title="Facebook"><img src="{$bebophome}/img/services-sprite.gif" title="Facebook" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-343px -1px" class="sociable-hovers" /></a></li>
 
 </ul>
 
