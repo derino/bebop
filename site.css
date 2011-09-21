@@ -363,7 +363,7 @@ font-weight:900;
 .bebop #filters tr td {
     display: block;
     float: left;
-//    clear: left;
+    clear: left;
 }
 .bebop #filters ul li {
     float: left;
