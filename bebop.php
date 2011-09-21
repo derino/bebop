@@ -5,11 +5,12 @@ include_once("bebop.conf.inc.php");
 $action=$_GET["action"];
 ?>
 
-<div class="bebop">
 <?php 
   if(isset($EXTERNAL_HEADER))
     include $EXTERNAL_HEADER 
 ?>
+
+<div class="bebop">
 
 <!-- header -->
 <div class="whitebox">
@@ -41,40 +42,40 @@ foreach ($MENU as $_category => $items)
   print "<td>";
   if($_category == "keywords")
     {
-      //      print "<td>";
-      print "<b><a href=\"index.php?action=showkeywordscloud\">by ".$_category."</a></b>&#160;&#160;&#160;<br />";
-      //      print "<ul>";
-      //print "<li><a href=\"index.php?action=showkeywordscloud\">show all</a></li>"; 
-      //print "</ul>";
-      //print "</td>";
-      //continue;
+      print "<b><a href=\"javascript:void(0)\" onclick=\"showCategory('','showkeywords')\">by ".$_category."</a></b>&#160;&#160;&#160;<br />";
+      //      print "<b><a href=\"index.php?action=showkeywordscloud\">by ".$_category."</a></b>&#160;&#160;&#160;<br />";
     }
 
   else if($_category == "author")
     {
-      print "<b><a href=\"index.php?action=showauthorlist\">by ".$_category."</a></b>&#160;&#160;&#160;<br />";
+      print "<b><a href=\"javascript:void(0)\" onclick=\"showCategory('','showauthors')\">by ".$_category."</a></b>&#160;&#160;&#160;<br />";
+      //      print "<b><a href=\"index.php?action=showauthorlist\">by ".$_category."</a></b>&#160;&#160;&#160;<br />";
     }
   else
     {
-      //  <!--a href="javascript:void(0)" onclick="showCategory('year','all')">by year</a>&#160;&#160;&#160;<br /-->
-      print "<b><a href=\"index.php?action=showcategory&amp;by=".$_category."&amp;pub=all\">by ".$longname[$_category]."</a></b>&#160;&#160;&#160;<br />";
+      print "<b><a href=\"javascript:void(0)\" onclick=\"showCategory('$_category','all')\">by ".$longname[$_category]."</a></b>&#160;&#160;&#160;<br />";
+
+//      print "<b><a href=\"index.php?action=showcategory&amp;by=".$_category."&amp;pub=all\">by ".$longname[$_category]."</a></b>&#160;&#160;&#160;<br />";
     }
 
   print "<ul>";
 
   if($_category == "keywords")
     {
-      print "<li><a href=\"index.php?action=showkeywordscloud\">show all</a></li>"; 
+      print "<li><a href=\"javascript:void(0)\" onclick=\"showCategory('','showkeywords')\">show all</a></li>"; 
+      //      print "<li><a href=\"index.php?action=showkeywordscloud\">show all</a></li>"; 
     }
   if($_category == "author")
     {
-      print "<li><a href=\"index.php?action=showauthorlist\">show all</a></li>"; 
+      print "<li><a href=\"javascript:void(0)\" onclick=\"showCategory('','showauthors')\">show all</a></li>"; 
+      //      print "<li><a href=\"index.php?action=showauthorlist\">show all</a></li>"; 
     }
 
   foreach ($items as $_item)
   {
     $_itemtext = ($_category == "entrytype") ? $longnameEntrytype[$_item] : $_item;
-    print "<li><a href=\"index.php?action=showcategory&amp;by=".$_category."&amp;pub=".$_item."\">".$_itemtext."</a></li>"; 
+    print "<li><a href=\"javascript:void(0)\" onclick=\"showCategory('$_category','$_item')\">".$_itemtext."</a></li>"; 
+    //    print "<li><a href=\"index.php?action=showcategory&amp;by=".$_category."&amp;pub=".$_item."\">".$_itemtext."</a></li>"; 
   }
 
   print "</ul>";
@@ -141,7 +142,7 @@ Powered by <a href="http://www.alari.ch/people/derino/Software/Bebop/index.php">
 </span><br/><br/><br/>&nbsp;
 </div> 
 
-</div> <!-- main -->
+</div> <!-- bebop -->
 
 <?php 
   if(isset($EXTERNAL_FOOTER))
