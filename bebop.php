@@ -5,12 +5,12 @@ include_once("bebop.conf.inc.php");
 $action=$_GET["action"];
 ?>
 
+<div class="bebop">
+
 <?php 
   if(isset($EXTERNAL_HEADER))
     include $EXTERNAL_HEADER 
 ?>
-
-<div class="bebop">
 
 <!-- header -->
 <div class="whitebox">
