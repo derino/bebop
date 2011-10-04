@@ -15,7 +15,7 @@
 	<xsl:if test="$thisNode = $firstNodeAtSameLocation">
 		<xsl:variable name="count" select="count(key('rss_categories', .))"/>                            
 		<li><a>
-			<xsl:attribute name="href">#CfPTable</xsl:attribute>
+			<xsl:attribute name="href">javascript:void(0)</xsl:attribute><!--#CfPTable-->
 			<!--xsl:attribute name="class">tag<xsl:value-of select="$count" /></xsl:attribute-->
 			<!--xsl:attribute name="title"><xsl:value-of select="$count" /></xsl:attribute-->
 			<xsl:attribute name="onclick">showCategory('author','<xsl:value-of select="."/>')</xsl:attribute>
