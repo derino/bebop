@@ -2,8 +2,13 @@
 
 include_once("functions.inc.php");
 
-// MANDATORY: URL address of the bebop installation folder on your server.
+// MANDATORY: URL address of the bebop installation folder on your server (without trailing slash ('/') at the end).
 $BEBOP_HOME="http://www.alari.ch/people/derino/apps/bebop";
+
+// MANDATORY (if Bebop is embedded into a webpage): URL of the page where Bebop is embedded (included).
+// e.g. http://madnessproject.org/publications-bebop/
+// Otherwise, leave the default value
+$BEBOP_EMBEDDING_URL=$BEBOP_HOME."/";
 
 // MANDATORY: full path to the Java executable (needed by addpub.php)
 $JAVA_EXECUTABLE="/usr/bin/java";

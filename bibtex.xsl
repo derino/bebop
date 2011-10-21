@@ -26,6 +26,7 @@
 <xsl:param name="breadcrumb1">by year</xsl:param>
 <xsl:param name="breadcrumb2">all</xsl:param>
 <xsl:param name="bebophome">http</xsl:param>
+<xsl:param name="bebopembeddingurl">http</xsl:param>
 
 <xsl:template match="/">
 <br />
@@ -44,6 +45,7 @@
 			<xsl:with-param name="sortype" select="$sorttype" />
 			<xsl:with-param name="query" select="entries/entry" />
 			<xsl:with-param name="bebophome" select="$bebophome" />
+			<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 		</xsl:call-template>
 	</xsl:when>
 	<xsl:when test="$categoryby='year'">
@@ -51,6 +53,7 @@
 			<xsl:with-param name="sortype" select="$sorttype" />
 			<xsl:with-param name="query" select="entries/entry[year=$categorytype]" />
 			<xsl:with-param name="bebophome" select="$bebophome" />
+			<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 		</xsl:call-template>
 	</xsl:when>
 	<xsl:when test="$categoryby='researcharea'">
@@ -58,6 +61,7 @@
 			<xsl:with-param name="sortype" select="$sorttype" />
 			<xsl:with-param name="query" select="entries/entry[researcharea=$categorytype]" />
 			<xsl:with-param name="bebophome" select="$bebophome" />
+			<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 		</xsl:call-template>
 	</xsl:when>
 	<xsl:when test="$categoryby='entrytype'">
@@ -67,6 +71,7 @@
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<xsl:with-param name="query" select="entries/entry[entrytype='article']" />
 					<xsl:with-param name="bebophome" select="$bebophome" />
+					<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:when test="$categorytype='inproceedings'">
@@ -74,6 +79,7 @@
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<xsl:with-param name="query" select="entries/entry[entrytype='inproceedings' or entrytype='conference']" />
 					<xsl:with-param name="bebophome" select="$bebophome" />
+					<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:when test="$categorytype='book'">
@@ -81,6 +87,7 @@
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<xsl:with-param name="query" select="entries/entry[entrytype='book']" />
 					<xsl:with-param name="bebophome" select="$bebophome" />
+					<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:when test="$categorytype='inbookincollection'">
@@ -88,6 +95,7 @@
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<xsl:with-param name="query" select="entries/entry[entrytype='incollection' or entrytype='inbook']" />
 					<xsl:with-param name="bebophome" select="$bebophome" />
+					<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:when test="$categorytype='mastersthesis'">
@@ -95,6 +103,7 @@
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<xsl:with-param name="query" select="entries/entry[entrytype='mastersthesis' and substring-after(@name, substring-before(@name,'MS'))='MS']" />
 					<xsl:with-param name="bebophome" select="$bebophome" />
+					<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:when test="$categorytype='mastersproject'">
@@ -103,6 +112,7 @@
 					<!-- following is equal to ends-with(@name, 'MAS'), but ends-with not available -->
 					<xsl:with-param name="query" select="entries/entry[entrytype='mastersthesis' and substring-after(@name, substring-before(@name,'MAS'))='MAS']" />
 					<xsl:with-param name="bebophome" select="$bebophome" />
+					<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:when test="$categorytype='patent'">
@@ -111,6 +121,7 @@
 					<!-- following is equal to ends-with(@name, 'PATENT'), but ends-with not available -->
 					<xsl:with-param name="query" select="entries/entry[entrytype='misc' and substring-after(@name, substring-before(@name,'PATENT'))='PATENT']" />
 					<xsl:with-param name="bebophome" select="$bebophome" />
+					<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:when test="$categorytype='misc'">
@@ -119,6 +130,7 @@
 					<!-- following is equal to ends-with(@name, 'MISC'), but ends-with not available -->
 					<xsl:with-param name="query" select="entries/entry[entrytype='misc' and substring-after(@name, substring-before(@name,'MISC'))='MISC']" />
 					<xsl:with-param name="bebophome" select="$bebophome" />
+					<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 				</xsl:call-template>			
 			</xsl:when>
 			<xsl:otherwise>
@@ -126,6 +138,7 @@
 					<xsl:with-param name="sortype" select="$sorttype" />
 					<xsl:with-param name="query" select="entries/entry[entrytype=$categorytype]" />
 					<xsl:with-param name="bebophome" select="$bebophome" />
+					<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 				</xsl:call-template>
 			</xsl:otherwise>
 		</xsl:choose>
@@ -135,6 +148,7 @@
 			<xsl:with-param name="sortype" select="$sorttype" />
 			<xsl:with-param name="query" select="entries/entry[authors/author=$categorytype]" />
 			<xsl:with-param name="bebophome" select="$bebophome" />
+			<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 		</xsl:call-template>
 	</xsl:when>
 	<xsl:when test="$categoryby='keyword'">
@@ -142,6 +156,7 @@
 			<xsl:with-param name="sortype" select="$sorttype" />
 			<xsl:with-param name="query" select="entries/entry[keywords/keyword=$categorytype]" />
 			<xsl:with-param name="bebophome" select="$bebophome" />
+			<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 		</xsl:call-template>
 	</xsl:when>
 	<xsl:when test="$categoryby='ID'">
@@ -150,6 +165,7 @@
 			<xsl:with-param name="query" select="entries/entry[@name=$categorytype]" />
 			<xsl:with-param name="categorybyID" select="'true'" />
 			<xsl:with-param name="bebophome" select="$bebophome" />
+			<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 		</xsl:call-template>
 	</xsl:when>
 	<xsl:otherwise> <!-- All -->
@@ -157,6 +173,7 @@
 			<xsl:with-param name="sortype" select="$sorttype" />
 			<xsl:with-param name="query" select="entries/entry" />
 			<xsl:with-param name="bebophome" select="$bebophome" />
+			<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 		</xsl:call-template>
 	</xsl:otherwise>
 </xsl:choose>
@@ -170,6 +187,7 @@
 <xsl:param name="query" />
 <xsl:param name="categorybyID">false</xsl:param> <!-- when this param is true, entry details are printed, otherwise no -->
 <xsl:param name="bebophome" />
+<xsl:param name="bebopembeddingurl" />
 
 <xsl:variable name="vMonthNames" 
     select="'|January|February|March|April|May|June|July|August|September|October|November|December'"/>
@@ -192,16 +210,16 @@
 
 <xsl:choose>
 	<xsl:when test="entrytype='mastersthesis' and substring-after(@name, substring-before(@name,'MS'))='MS'">
-		<div class="{entrytype}"><a class="{entrytype}" href="index.php?action=showcategory&amp;by=ID&amp;pub={@name}" title="{entrytype}"></a></div>
+		<div class="{entrytype}"><a class="{entrytype}" href="{$bebopembeddingurl}?action=showcategory&amp;by=ID&amp;pub={@name}" title="{entrytype}"></a></div>
 	</xsl:when>
 	<xsl:when test="entrytype='mastersthesis' and substring-after(@name, substring-before(@name,'MAS'))='MAS'">
-		<div class="mastersproject"><a class="mastersproject" href="index.php?action=showcategory&amp;by=ID&amp;pub={@name}" title="MAS project"></a></div>
+		<div class="mastersproject"><a class="mastersproject" href="{$bebopembeddingurl}?action=showcategory&amp;by=ID&amp;pub={@name}" title="MAS project"></a></div>
 	</xsl:when>
         <xsl:when test="entrytype='misc' and substring-after(@name, substring-before(@name,'PATENT'))='PATENT'">
-	  <div class="patent"><a class="patent" href="index.php?action=showcategory&amp;by=ID&amp;pub={@name}" title="Patent"></a></div>
+	  <div class="patent"><a class="patent" href="{$bebopembeddingurl}?action=showcategory&amp;by=ID&amp;pub={@name}" title="Patent"></a></div>
 </xsl:when>
 	<xsl:otherwise>
-		 <div class="{entrytype}"><a class="{entrytype}" href="index.php?action=showcategory&amp;by=ID&amp;pub={@name}" title="{entrytype}">&nbsp;</a></div>
+		 <div class="{entrytype}"><a class="{entrytype}" href="{$bebopembeddingurl}?action=showcategory&amp;by=ID&amp;pub={@name}" title="{entrytype}">&nbsp;</a></div>
 	</xsl:otherwise>
 </xsl:choose>
 
@@ -273,6 +291,7 @@
       <xsl:call-template name="printEntryDetails">
 	<xsl:with-param name="pubid" select="@name" />
 	<xsl:with-param name="bebophome" select="$bebophome" />
+	<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
       </xsl:call-template>
     </div>
     <!--hr /-->

@@ -21,6 +21,7 @@ if($action != null)
 	$xslfile='showentrydetail.xsl';
 	$params['pubid'] = $pub;
 	$params['bebophome'] = $BEBOP_HOME;
+	$params['bebopembeddingurl'] = $BEBOP_EMBEDDING_URL;
 	echo transform($xmlfile, $xslfile, $params);
       }
     else if($action == "showkeywordscloud")
@@ -54,6 +55,7 @@ if($action != null)
 	$params['breadcrumb1'] = $breadcrumb1;
 	$params['breadcrumb2'] = $breadcrumb2;
 	$params['bebophome'] = $BEBOP_HOME;
+	$params['bebopembeddingurl'] = $BEBOP_EMBEDDING_URL;
 	echo transform($xmlfile, $xslfile, $params);
       }
     else if($action == 'copyright')
@@ -71,6 +73,7 @@ if($action != null)
      $params['breadcrumb1'] = "by year";
      $params['breadcrumb2'] = "all";
      $params['bebophome'] = $BEBOP_HOME;
+     $params['bebopembeddingurl'] = $BEBOP_EMBEDDING_URL;
      echo transform($xmlfile, $xslfile, $params);
    }
 
@@ -85,7 +88,7 @@ if($action != null && $action != "showentrydetail" && $action != "showbib" && $a
 
     //$http_part = (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"]=="on") ? "https://" : "http://";
     //$permalink=$http_part . $_SERVER["SERVER_NAME"] . $_SERVER['REQUEST_URI'];
-    $permalink=$BEBOP_HOME . "/index.php?action=" . $action;
+    $permalink=$BEBOP_EMBEDDING_URL . "?action=" . $action;
     //$permalink=$http_part . $BEBOP_INCLUDING_FILE . "?action=" . $action;
     if($by != null)
       $permalink = $permalink."&amp;by=".$by;

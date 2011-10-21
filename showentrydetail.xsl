@@ -17,6 +17,7 @@
 
 <xsl:param name="pubid">371690</xsl:param>
 <xsl:param name="bebophome">http</xsl:param>
+<xsl:param name="bebopembeddingurl">http</xsl:param>
 
 <xsl:template match="/">
 
@@ -24,6 +25,7 @@
 	<xsl:call-template name="printEntryDetails">
 	  <xsl:with-param name="pubid" select="$pubid" />
 	  <xsl:with-param name="bebophome" select="$bebophome" />
+	  <xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 	</xsl:call-template>
 
       </xsl:for-each>
@@ -33,6 +35,7 @@
 <xsl:template name="printEntryDetails">
 <xsl:param name="pubid" />
 <xsl:param name="bebophome" />
+<xsl:param name="bebopembeddingurl" />
 
 <xsl:variable name="abstract" 
     select="document(concat('abstracts/',$pubid,'-abstract.xml'))//abstract"/>
@@ -53,7 +56,7 @@
 
 				<tr><td><b>Document</b></td>
 				    <td>
-				      <img align="absmiddle" src="{$bebophome}/img/spacer.gif" class="permalinkSprite" style="background-image:url('{$bebophome}/img/sprites.gif');margin:2px 0 0 0;" title="permalink" /><a href="{$bebophome}/index.php?action=showcategory&amp;by=ID&amp;pub={@name}">permanent link</a>
+				      <img align="absmiddle" src="{$bebophome}/img/spacer.gif" class="permalinkSprite" style="background-image:url('{$bebophome}/img/sprites.gif');margin:2px 0 0 0;" title="permalink" /><a href="{$bebopembeddingurl}?action=showcategory&amp;by=ID&amp;pub={@name}">permanent link</a>
 				      <!-- <xsl:value-of select="$bebophome" />/index.php?action=showcategory&amp;by=ID&amp;pub=<xsl:value-of select="@name" /> -->
 
 				      &#160;<img align="absmiddle" src="{$bebophome}/img/spacer.gif" class="bibtexSprite" style="background-image:url('{$bebophome}/img/sprites.gif');margin:2px 0 0 0;" title="cite" /><a href="javascript:void(0)" onclick="getBib('{@name}')">BibTeX</a>
@@ -78,10 +81,10 @@
 <div class="sociable">
 <ul>
 <!--li class="sociablefirst"><a rel="nofollow"  target="_blank" href="mailto:?subject={title}%26body={$bebophome}/index.php?action=showcategory%25%32%36by=ID%25%32%36pub={@name}" title="email"><img src="{$bebophome}/img/services-sprite.gif" title="email" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-325px -1px" class="sociable-hovers" /></a></li-->
-<li><a rel="nofollow"  target="_blank" href="https://twitter.com/intent/tweet?text={title} - {$bebophome}/index.php?action=showcategory%26by=ID%26pub={@name}&amp;via=bibpub" title="Twitter"><img src="{$bebophome}/img/services-sprite.gif" title="Twitter" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-343px -55px" class="sociable-hovers" /></a></li>
+<li><a rel="nofollow"  target="_blank" href="https://twitter.com/intent/tweet?text={title} - {$bebopembeddingurl}?action=showcategory%26by=ID%26pub={@name}&amp;via=bibpub" title="Twitter"><img src="{$bebophome}/img/services-sprite.gif" title="Twitter" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-343px -55px" class="sociable-hovers" /></a></li>
 
 
-<li><a rel="nofollow"  target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]={$bebophome}/index.php?action=showcategory%26by=ID%26pub={@name}&amp;p[title]={title}&amp;p[summary]={$abstract}&amp;p[images][0]={$bebophome}/img/bebop-logo_w100.png" title="Facebook"><img src="{$bebophome}/img/services-sprite.gif" title="Facebook" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-343px -1px" class="sociable-hovers" /></a></li>
+<li><a rel="nofollow"  target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]={$bebopembeddingurl}?action=showcategory%26by=ID%26pub={@name}&amp;p[title]={title}&amp;p[summary]={$abstract}&amp;p[images][0]={$bebophome}/img/bebop-logo_w100.png" title="Facebook"><img src="{$bebophome}/img/services-sprite.gif" title="Facebook" alt="" style="width: 16px; height: 16px; background: transparent url('{$bebophome}/img/services-sprite.png') no-repeat; background-position:-343px -1px" class="sociable-hovers" /></a></li>
 
 </ul>
 
