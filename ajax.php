@@ -79,7 +79,7 @@ if($action != null)
 
 
 
-if($action != null && $action != "showentrydetail" && $action != "showbib" && $action != "showkeywordscloud" && $action != "showauthorlist" && $action != "copyright")
+if($action != null && $action != "showentrydetail" && $action != "showbib" && $action != "showkeywordscloud" && $action != "showauthorlist" && $action != "copyright" && $action != "search")
   {
     echo "<div class=\"content\">";
     echo "<div class=\"entry1\">";

@@ -242,3 +242,10 @@ function stateChangedKeywords()
  document.getElementById("CfPTable").innerHTML="";
  } 
 }
+
+function doSearch()
+{
+    var query = document.forms['searchform'].q.value;
+
+    showCategory('searchtitle', query.toLowerCase());
+}

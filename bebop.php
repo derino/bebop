@@ -23,6 +23,15 @@ $action=$_GET["action"];
 </div>--> <!-- /header -->
 
 <div class="content">
+
+<div align="right">
+<form name="searchform" action="javascript:doSearch()" method="post">
+   Find in Title
+   <input type="text" name="q" />
+   <input type="submit" value="Go" />
+</form>
+</div>
+
 <div class="entry1">
   <div class="entrybody" style="visibility:visible;">
 <?php
