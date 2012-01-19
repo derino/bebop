@@ -6,6 +6,7 @@ $longname['entrytype'] = 'document type';
 $longname['ID'] = 'ID';
 $longname['author'] = 'author';
 $longname['keyword'] = 'keyword';
+$longname['searchtitle'] = 'title containing';
 
 $longnameEntrytype['paper'] = 'Journal article';
 $longnameEntrytype['inproceedings'] = 'Inproceedings/Talk';

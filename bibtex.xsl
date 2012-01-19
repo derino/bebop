@@ -151,6 +151,14 @@
 			<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
 		</xsl:call-template>
 	</xsl:when>
+	<xsl:when test="$categoryby='searchtitle'">
+		<xsl:call-template name="listPubs">
+			<xsl:with-param name="sortype" select="$sorttype" />
+			<xsl:with-param name="query" select="entries/entry/title[contains(translate(child::text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'),$categorytype)]/.." />
+			<xsl:with-param name="bebophome" select="$bebophome" />
+			<xsl:with-param name="bebopembeddingurl" select="$bebopembeddingurl" />
+		</xsl:call-template>
+	</xsl:when>
 	<xsl:when test="$categoryby='keyword'">
 		<xsl:call-template name="listPubs">
 			<xsl:with-param name="sortype" select="$sorttype" />
